@@ -2,8 +2,8 @@
 var board = [];
 
 // function play(clickedId) {
-//     var playerSpan = document.getElementById('player');
-//     var clickedElement = document.getElementById(clickedId);
+//     const playerSpan = document.getElementById('player');
+//     const clickedElement = document.getElementById(clickedId);
 
 //     if (playerSpan.innerText === 'X') {
 //         playerSpan.innerText = 'O';
@@ -15,6 +15,7 @@ var board = [];
 //         board[clickedElement] = 'O';
 //     }
 //     console.log(board);
+
 function play(clickedId) {
     const playerSpan = document.getElementById('player');
     const clickedElement = document.getElementById(clickedId);
@@ -28,6 +29,7 @@ function play(clickedId) {
       clickedElement.innerText = 'O';
       board[clickedId] = 'O';
     }
+    
     console.log(board);
 
     const topLeft = board[0];
@@ -67,15 +69,17 @@ function play(clickedId) {
         return;
     }
 
+
     // board is full ~ loop
     let fullBoard = true;
     for (let i = 0; i <= 8; i++) {
         if (board[i] === undefined) {
           fullBoard = false;
         }
-       if (board[i] === true) {
-          alert("CAT's game!");
-        }    
-    }
+    }  
+    
+    if (fullBoard === true) {
+        alert("CAT's game!");
+    } 
 
 }
